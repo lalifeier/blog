@@ -1,3 +1,8 @@
+---
+# slug: /
+title: 玩转 Ubuntu 20.04 LTS
+---
+
 # 玩转 Ubuntu 20.04 LTS
 
 ## 安装篇

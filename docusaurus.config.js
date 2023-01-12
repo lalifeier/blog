@@ -33,6 +33,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/', 
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -49,22 +50,22 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-        // pages: {
-        //   path: 'src/pages',
-        //   routeBasePath: '',
-        //   include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],
-        //   exclude: [
-        //     '**/_*.{js,jsx,ts,tsx,md,mdx}',
-        //     '**/_*/**',
-        //     '**/*.test.{js,jsx,ts,tsx}',
-        //     '**/__tests__/**',
-        //   ],
-        //   mdxPageComponent: '@theme/MDXPage',
-        //   remarkPlugins: [require('remark-math')],
-        //   rehypePlugins: [],
-        //   beforeDefaultRemarkPlugins: [],
-        //   beforeDefaultRehypePlugins: [],
-        // },
+        pages: {
+          path: 'src/pages',
+          routeBasePath: '/home',
+          // include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],
+          // exclude: [
+          //   '**/_*.{js,jsx,ts,tsx,md,mdx}',
+          //   '**/_*/**',
+          //   '**/*.test.{js,jsx,ts,tsx}',
+          //   '**/__tests__/**',
+          // ],
+          // mdxPageComponent: '@theme/MDXPage',
+          // remarkPlugins: [require('remark-math')],
+          // rehypePlugins: [],
+          // beforeDefaultRemarkPlugins: [],
+          // beforeDefaultRehypePlugins: [],
+        },
         // googleAnalytics: {
         //   trackingID: 'UA-141789564-1',
         //   anonymizeIP: true,
@@ -93,6 +94,12 @@ const config = {
             docId: 'intro',
             position: 'right',
             label: 'Docs',
+            // items: [
+            //   {
+            //     label: '',
+            //     to: '',
+            //   },
+            // ]
           },
           // {to: '/blog', label: 'Blog', position: 'right'},
           {
