@@ -1,0 +1,16 @@
+[build.environment]
+  NODE_VERSION = "16"
+  # NPM_FLAGS = "--version"
+  # NODE_OPTIONS = "--max_old_space_size=8192"
+
+[build]
+  # command = "npx pnpm install --store=node_modules/.pnpm-store --frozen-lockfile && npx pnpm run build"
+  command = "pnpm run build"
+  publish = "build"
+
+# [[plugins]]
+# package = "netlify-plugin-cache"
+#   [plugins.inputs]
+#   paths = [
+#     "node_modules/.pnpm",
+#   ]

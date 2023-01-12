@@ -1,4 +1,7 @@
 position: 2
-label: Devops
+label: 运维
 link:
   type: generated-index
+  # title:
+  # description:
+  slug: /category/devops

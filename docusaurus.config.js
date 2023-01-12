@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Blog',
   tagline: 'Blog',
-  url: 'https://lalifeier.github.io',
+  url:  process.env.BASE === 'zone' ? 'https://docs.lalifeier.io' : 'https://lalifeier.github.io',
   baseUrl: '/blog/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -33,7 +33,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/', 
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -85,15 +85,16 @@ const config = {
       navbar: {
         title: 'Blog',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Blog Logo',
           src: 'img/logo.svg',
         },
+        hideOnScroll: false,
         items: [
           {
             type: 'doc',
             docId: 'intro',
             position: 'right',
-            label: 'Docs',
+            label: '文档',
             // items: [
             //   {
             //     label: '',
@@ -101,7 +102,7 @@ const config = {
             //   },
             // ]
           },
-          // {to: '/blog', label: 'Blog', position: 'right'},
+          // {to: '/blog', label: '博客', position: 'right'},
           {
             href: 'https://github.com/lalifeier/blog',
             label: 'GitHub',
@@ -109,6 +110,7 @@ const config = {
           },
         ],
       },
+      // hideableSidebar: true,
       footer: {
         style: 'dark',
         links: [
