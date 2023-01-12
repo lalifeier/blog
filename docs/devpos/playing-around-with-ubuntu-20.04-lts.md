@@ -1167,7 +1167,7 @@ lspci| grep -i vga
 ```
 
 :::caution
-[ 479.716546][error]Cannot access secondary GPU - error: [XORG](EE) Failed to load module "nvidia" (module does not exist, 0)
+[ 479.716546][error]Cannot access secondary GPU - error: [XORG]\(EE\) Failed to load module "nvidia" (module does not exist, 0)
 
 [ 479.716585][error]Aborting because fallback start is disabled.
 :::

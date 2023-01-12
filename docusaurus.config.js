@@ -40,32 +40,33 @@ const config = {
           editUrl:
             'https://github.com/lalifeier/blog/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/lalifeier/blog/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        blog: false,
+        // blog: {
+        //   showReadingTime: true,
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl:
+        //     'https://github.com/lalifeier/blog/tree/main/packages/create-docusaurus/templates/shared/',
+        // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-        pages: {
-          path: 'src/pages',
-          routeBasePath: '/home',
-          // include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],
-          // exclude: [
-          //   '**/_*.{js,jsx,ts,tsx,md,mdx}',
-          //   '**/_*/**',
-          //   '**/*.test.{js,jsx,ts,tsx}',
-          //   '**/__tests__/**',
-          // ],
-          // mdxPageComponent: '@theme/MDXPage',
-          // remarkPlugins: [require('remark-math')],
-          // rehypePlugins: [],
-          // beforeDefaultRemarkPlugins: [],
-          // beforeDefaultRehypePlugins: [],
-        },
+        // pages: {
+        //   path: 'src/pages',
+        //   routeBasePath: '/home',
+        //   // include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],
+        //   // exclude: [
+        //   //   '**/_*.{js,jsx,ts,tsx,md,mdx}',
+        //   //   '**/_*/**',
+        //   //   '**/*.test.{js,jsx,ts,tsx}',
+        //   //   '**/__tests__/**',
+        //   // ],
+        //   // mdxPageComponent: '@theme/MDXPage',
+        //   // remarkPlugins: [require('remark-math')],
+        //   // rehypePlugins: [],
+        //   // beforeDefaultRemarkPlugins: [],
+        //   // beforeDefaultRehypePlugins: [],
+        // },
         // googleAnalytics: {
         //   trackingID: 'UA-141789564-1',
         //   anonymizeIP: true,
