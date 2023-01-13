@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkblog=self.webpackChunkblog||[]).push([[926],{998:e=>{e.exports=JSON.parse('{"title":"\u8fd0\u7ef4","slug":"/category/devops","permalink":"/blog/category/devops","navigation":{"previous":{"title":"\u7b80\u4ecb","permalink":"/blog/"},"next":{"title":"\u5f00\u53d1\u73af\u5883","permalink":"/blog/category/devpos/development-environment"}}}')}}]);
