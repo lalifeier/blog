@@ -1425,19 +1425,6 @@ gum use lalifeier
 
 ```
 
-### Ubuntu 22.04 使用 wayland
-
-```bash
-sudo vim /etc/gdm3/custom.conf
-
-# Enable Wayland
-WaylandEnable=true
-# Disable Wayland
-WaylandEnable=false
-
-sudo systemctl restart gdm3
-```
-
 ## 提高逼格篇
 
 ### screenfetch
