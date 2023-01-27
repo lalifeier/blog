@@ -38,39 +38,76 @@ sudo apt-get install gnome-shell-extensions
 sudo apt-get install chrome-gnome-shell
 ```
 
-在https://extensions.gnome.org/安装插件Dash to Dock 和 NetSpeed
+在https://extensions.gnome.org/安装插件Dash to Dock（或 Dash to Panel） 和 Net Speed(Net speed Simplified) 和 Bing Wallpaper
 
 - 安装 GTK 主题
 
-在https://www.gnome-look.org/p/1275087/下载主题文件
-
 ```bash
+# 在https://www.gnome-look.org/p/1275087/下载主题文件
 tar -xvf Mojave-dark-20200414114243.tar.xz
 sudo mv Mojave-dark /usr/share/themes/
+# 打开 gnome-tweak-tool（优化）在主题栏选择下载的主题
 ```
 
-打开 gnome-tweak-tool（优化）在主题栏选择下载的主题
-
 - 安装图标
-  在https://www.gnome-look.org/p/1305429/下载图标文件
 
 ```bash
+# 在https://www.gnome-look.org/p/1305429/下载图标文件
 tar -xvf 01-McMojave-circle-20200415125915.tar.xz
 sudo mv McMojave-circle /usr/share/icons
 sudo mv McMojave-circle-dark /usr/share/icons
+# 打开 gnome-tweak-tool（优化）在图标栏选择下载的图标
 ```
-
-打开 gnome-tweak-tool（优化）在图标栏选择下载的图标
 
 - 安装光标
-  在https://www.gnome-look.org/p/1355701/下载光标文件
 
 ```bash
+# 在https://www.gnome-look.org/p/1355701/下载光标文件
 tar -xvf McMojave-cursors.tar.xz
 sudo mv McMojave-cursors /usr/share/icons
+# 打开 gnome-tweak-tool（优化）在光标栏选择下载的光标
 ```
 
-打开 gnome-tweak-tool（优化）在光标栏选择下载的光标
+- 安装 WhiteSur Gtk Theme
+
+```bash
+# WhiteSur Gtk Theme: https://www.gnome-look.org/p/1403328/
+tar -xvf WhiteSur-Light.tar.xz
+tar -xvf WhiteSur-Dark.tar.xz
+sudo mv WhiteSur-Light /usr/share/themes
+sudo mv WhiteSur-Dark /usr/share/themes
+
+# WhiteSur-icon-theme: https://www.gnome-look.org/p/1405756/
+tar -xvf 01-WhiteSur.tar.xz
+sudo mv WhiteSur /usr/share/icons
+sudo mv WhiteSur-dark /usr/share/icons
+
+# macOS Big Sur cursors: https://www.gnome-look.org/p/1408466/
+tar -xvf macOS-BigSur.tar.gz
+sudo mv macOS-BigSur /usr/share/icons
+
+# Wallpaper: https://www.pling.com/p/1398833/
+# https://512pixels.net/projects/default-mac-wallpapers-in-5k/#jp-carousel-19693
+
+# macOS Big Sur
+# Big Sur Colorful Day
+curl -L https://512pixels.net/downloads/macos-wallpapers/11-0-Color-Day.jpg -o ~/图片/Wallpaper/Big-Sur-Colorful-Day.jpg
+# Big Sur Colorful Night
+curl -L https://512pixels.net/downloads/macos-wallpapers/11-0-Big-Sur-Color-Night.jpg -o ~/图片/Wallpaper/Big-Sur-Colorful-Night.jpg
+# Big Sur Day
+curl -L https://512pixels.net/downloads/macos-wallpapers/11-0-Day.jpg -o ~/图片/Wallpaper/Big-Sur-Day.jpg
+# Big Sur Night
+curl -L https://512pixels.net/downloads/macos-wallpapers/11-0-Night.jpg -o ~/图片/Wallpaper/Big-Sur-Night.jpg
+
+# macOS Monterey
+# Monterey Light
+curl -L https://512pixels.net/downloads/macos-wallpapers-6k/12-Light.jpg -o ~/图片/Wallpaper/Monterey-Light.jpg
+# Monterey Dark
+curl -L https://512pixels.net/downloads/macos-wallpapers-6k/12-Dark.jpg -o ~/图片/Wallpaper/Monterey-Light.jpg
+
+# Firefox theme: https://github.com/vinceliuice/WhiteSur-gtk-theme/tree/master/src/other/firefox
+# Dash-to-Dock theme: https://github.com/vinceliuice/WhiteSur-gtk-theme/tree/master/src/other/dash-to-dock
+```
 
 - 安装 oh-my-zsh 美化终端
 
@@ -280,10 +317,50 @@ rm -rf brew-install
 
 ## 软件篇
 
-### 搜狗输入法
+### 输入法
 
 ```bash
+# 搜狗输入法
 # 在https://pinyin.sogou.com/linux/下载安装包
+
+# https://shurufa.sogou.com/linux/guide
+sudo apt install libqt5qml5 libqt5quick5 libqt5quickwidgets5 qml-module-qtquick2
+sudo apt install libgsettings-qt1
+
+# 谷歌拼音输入法
+# sudo apt-get install fcitx-googlepinyi
+
+# 百度输入法
+# https://srf.baidu.com/site/guanwang_linux/index.html
+sudo apt-get install aptitude
+sudo aptitude install fcitx-bin fcitx-table fcitx-config-gtk fcitx-config-gtk2 fcitx-frontend-all
+sudo aptitude install qt5-default qtcreator qml-module-qtquick-controls2
+
+# RIME输入法
+sudo apt-get install fcitx-rime
+```
+
+### fcitx5
+
+```bash
+# 安装fcitx5
+sudo apt install fcitx5 fcitx5-chinese-addons
+# sudo add-apt-repository ppa:hosxy/fcitx5
+# sudo apt update
+
+# 安装维基百科中文拼音词库 fcitx5-pinyin-zhwiki
+# https://github.com/felixonmars/fcitx5-pinyin-zhwiki
+# 下载词库文件
+wget https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-20220529.dict
+# 创建存储目录
+mkdir ~/.local/share/fcitx5/pinyin/dictionaries/
+# 移动词库文件至该目录
+mv zhwiki-20220529.dict ~/.local/share/fcitx5/pinyin/dictionaries/
+
+# fcitx5 主题
+# https://github.com/hosxy/Fcitx5-Material-Color
+sudo apt install fcitx5-material-color
+# fcitx配置 -> 附加组件 -> 经典用户界面 -> 主题
 ```
 
 ### Chrome
@@ -1148,6 +1225,21 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 sudo apt-get install ntpdate
 sudo ntpdate time.windows.com
 sudo hwclock --localtime --systohc
+```
+
+### 安装 NVIDIA 显卡驱动
+
+```bash
+# 添加源
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+
+# 查看驱动
+sudo ubuntu-drivers devices
+# 安装
+sudo ubuntu-drivers autoinstall
+# 查看驱动是否安装成功
+nvidia-smi
 ```
 
 ### 笔记本关闭独立显卡
