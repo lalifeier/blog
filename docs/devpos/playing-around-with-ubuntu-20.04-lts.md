@@ -36,6 +36,8 @@ sudo apt-get install gnome-tweak-tool
 ```bash
 sudo apt-get install gnome-shell-extensions
 sudo apt-get install chrome-gnome-shell
+
+# sudo apt remove gnome-shell-extension-ubuntu-dock
 ```
 
 在https://extensions.gnome.org/安装插件Dash to Dock（或 Dash to Panel） 和 Net Speed(Net speed Simplified) 和 Bing Wallpaper
