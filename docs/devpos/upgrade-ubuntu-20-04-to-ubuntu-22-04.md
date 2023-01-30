@@ -94,6 +94,8 @@ sudo reboot
 ### wifi drivers
 
 ```bash
+# sudo apt-get install r8168-dkms
+
 # https://itsfoss.com/speed-up-slow-wifi-connection-ubuntu
 
 
