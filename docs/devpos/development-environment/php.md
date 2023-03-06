@@ -274,16 +274,23 @@ EOF
 # For the first-time installation, you don't have phpbrew bash function yet.
 source ~/.phpbrew/bashrc
 
-# Fetch the release list from official php site...
+# 获取版本
 phpbrew update
+# 获取旧版本（低于 5.4）
+phpbrew update --old
 
-# List available releases
+# 列出已知版本
 phpbrew known
+# 列出已知的旧版本（低于 5.4）
+phpbrew known --old
 
 # List available variants
 phpbrew variants
 
-phpbrew --debug install 7.0 +default +fpm +mysql +gd
+# phpbrew --debug install 7.0 +default +fpm +mysql +gd
+# phpbrew --debug install -j $(nproc) --stdout 7.0 +default +mysql +gd +fpm +soap +debug
+phpbrew --debug install -j $(nproc) --stdout 7.0 +default +gd +soap +debug
+
 # 清理构建目录
 phpbrew clean php-7.0
 
@@ -296,6 +303,7 @@ phpbrew off
 
 # 安装扩展
 phpbrew --debug ext install xdebug
+phpbrew --debug ext install gd
 ```
 
 ### 来源
