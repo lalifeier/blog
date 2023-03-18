@@ -370,9 +370,10 @@ sudo apt install fcitx5-material-color
 - 方式一
 
 ```bash
-sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/ && \
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add - && \
-sudo apt update && \
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+sudo apt update
+sudo apt-cache search chrome
 sudo apt install google-chrome-stable
 ```
 
@@ -381,6 +382,19 @@ sudo apt install google-chrome-stable
 ```bash
 # 在https://www.google.cn/chrome/下载安装包
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+```
+
+### Brave
+
+```bash
+# https://brave.com/linux/#release-channel-installation
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+sudo apt update
+
+sudo apt install brave-browser
 ```
 
 ### uGet
