@@ -11,10 +11,10 @@ export SDKMAN_DIR="$HOME/.sdkman"
 EOF
 
 sdk list java
-sdk install java 8.0.265-open
-sdk default java 8.0.265-open
+sdk install java 8.0.362-librca
+sdk default java 8.0.362-librca
 
-# sdk install java 11.0.12-open
+# sdk install java 17.0.6-librca
 
 # maven
 # https://developer.aliyun.com/mvn/guide
