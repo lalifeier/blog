@@ -973,7 +973,13 @@ cd jetbrains-toolbox-1.17.6856
 
 ```bash
 # 在https://code.visualstudio.com/下载安装包
-sudo dpkg -i code_1.44.2-1587059832_amd64.deb
+# sudo dpkg -i code_1.44.2-1587059832_amd64.deb
+
+sudo apt-get install wget gpg apt-transport-https
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt update
+sudo apt install code
 
 #gist id：26cd2bab84eb4fccb549cf10bc7eb15d
 #token：YWZjNWRhMzdjMzk4NmUyYTQzYzRlMjZlMjVjY2QzNWE5OTk3MmQ5OQ==
