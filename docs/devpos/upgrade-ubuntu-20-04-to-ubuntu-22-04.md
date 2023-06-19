@@ -63,6 +63,21 @@ sudo systemctl restart gdm3
 
 ## NVIDIA drivers
 
+### 禁用 nouveau
+
+```bash
+sudo vim /etc/modprobe.d/blacklist.conf
+# 末尾添加
+blacklist nouveau
+options nouveau modeset=0
+
+# 更新
+sudo update-initramfs –u
+
+# 检查是否禁用成功
+lsmod | grep nouveau
+```
+
 ### 自动安装
 
 ```bash
