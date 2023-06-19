@@ -72,7 +72,7 @@ blacklist nouveau
 options nouveau modeset=0
 
 # 更新
-sudo update-initramfs –u
+sudo update-initramfs -u
 
 # 检查是否禁用成功
 lsmod | grep nouveau
