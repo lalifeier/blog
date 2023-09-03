@@ -37,43 +37,37 @@ vim ~/.sdkman/candidates/maven/3.8.6/conf/settings.xml
 
 # gradle
 sdk install gradle
-# ~/.gradle/init.gradle
-vim ~/.sdkman/candidates/gradle/7.5.1/init.d/init.gradle
-allprojects{
-    repositories {
-        def ALIYUN_CENTRAL_URL = 'https://maven.aliyun.com/repository/central'
-        def ALIYUN_JCENTER_URL = 'https://maven.aliyun.com/repository/public'
-        def ALIYUN_GOOGLE_URL = 'https://maven.aliyun.com/repository/google'
-        def ALIYUN_GRADLE_PLUGIN_URL = 'https://maven.aliyun.com/repository/gradle-plugin'
-        def ALIYUN_SPRING_URL = 'https://maven.aliyun.com/repository/spring'
-        def ALIYUN_SPRING_PLUGIN_URL = 'https://maven.aliyun.com/repository/spring-plugin'
-        def ALIYUN_GRAILS_CORE_URL = 'https://maven.aliyun.com/repository/grails-core'
-        def ALIYUN_APACHE_SNAPSHOT_URL = 'https://maven.aliyun.com/repository/apache-snapshots'
-
-        all { ArtifactRepository repo ->
-            if(repo instanceof MavenArtifactRepository){
-                def url = repo.url.toString()
-                if (url.startsWith('https://repo1.maven.org/maven2')) {
-                    project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_CENTRAL_URL."
-                    remove repo
-                }
-                if (url.startsWith('https://jcenter.bintray.com/')) {
-                    project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_JCENTER_URL."
-                    remove repo
-                }
-            }
-        }
-        maven {
-            url ALIYUN_CENTRAL_URL
-            url ALIYUN_JCENTER_URL
-            url ALIYUN_GOOGLE_URL
-            url ALIYUN_GRADLE_PLUGIN_URL
-            url ALIYUN_SPRING_URL
-            url ALIYUN_SPRING_PLUGIN_URL
-            url ALIYUN_GRAILS_CORE_URL
-            url ALIYUN_APACHE_SNAPSHOT_URL
-        }
+# ~/.gradle/init.gradle.kts
+fun RepositoryHandler.enableMirror() {
+  all {
+    if (this is MavenArtifactRepository) {
+      val originalUrl = this.url.toString().removeSuffix("/")
+      urlMappings[originalUrl]?.let {
+        logger.lifecycle("Repository[$url] is mirrored to $it")
+        this.setUrl(it)
+      }
     }
+  }
+}
+
+val urlMappings = mapOf(
+  "https://repo.maven.apache.org/maven2" to "https://mirrors.tencent.com/nexus/repository/maven-public/",
+  "https://dl.google.com/dl/android/maven2" to "https://mirrors.tencent.com/nexus/repository/maven-public/",
+  "https://plugins.gradle.org/m2" to "https://mirrors.tencent.com/nexus/repository/gradle-plugins/"
+)
+
+gradle.allprojects {
+  buildscript {
+    repositories.enableMirror()
+  }
+  repositories.enableMirror()
+}
+
+gradle.beforeSettings {
+  pluginManagement.repositories.enableMirror()
+  if (gradle.gradleVersion >= "6.8") {
+    dependencyResolutionManagement.repositories.enableMirror()
+  }
 }
 
 # build.gradle
@@ -86,7 +80,6 @@ allprojects {
     mavenCentral()
   }
 }
-
 
 sdk install tomcat
 # sdk install springboot
