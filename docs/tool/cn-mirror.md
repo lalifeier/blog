@@ -2,6 +2,8 @@
 ## title: 国内加速镜像
 ---
 
+# 国内加速镜像
+
 ## 开源镜像站
 
 | 开源镜像站                                        | 链接                                 |
@@ -206,7 +208,6 @@ go env -w GOPROXY=https://goproxy.cn,direct
 
 | 镜像源                                                             | 镜像地址                                                         |
 | ------------------------------------------------------------------ | ---------------------------------------------------------------- |
-| ------------------------------------------------------------------ | ---------------------------------------------------------------- |
 | [阿里云](https://developer.aliyun.com/mvn/guide)                   | https://maven.aliyun.com/repository/public                       |
 | [腾讯云](https://cloud.tencent.com/document/product/213/8623)      | https://mirrors.cloud.tencent.com/nexus/repository/maven-public/ |
 | [网易云](https://mirrors.163.com/.help/maven.html)                 | http://mirrors.163.com/maven/repository/maven-public/            |
@@ -216,7 +217,7 @@ go env -w GOPROXY=https://goproxy.cn,direct
 
 修改`~/.gradle/init.gradle.kts`
 
-```kotlin
+```kts
 fun RepositoryHandler.enableMirror() {
   all {
     if (this is MavenArtifactRepository) {
