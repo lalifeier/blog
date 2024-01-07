@@ -1,4 +1,17 @@
-# 免费云服务器资源
+# 免费云资源
+
+## 域名
+
+- [eu.org](https://nic.eu.org)
+- [cloudns](https://www.cloudns.net)
+- ~~[freenom](https://www.freenom.com)~~ (停止域名注册)
+  - [freenom 域名自动续期](https://github.com/luolongfei/freenom)
+- [nom.za](https://www.nom.za)
+- [co.uk](https://www.names.co.uk)
+
+## DNS
+
+- [DNSPod](https://dnspod.com/)
 
 ## 静态网站托管
 
@@ -20,6 +33,28 @@
 ## 数据库
 
 - [Filess](https://www.filess.io)
+
+### MySQL
+
+- https://remotemysql.com
+- https://www.db4free.net
+
+### SQLServer
+
+- https://www.gearhost.com
+
+### PostgresqlSQL
+
+- https://www.elephantsql.com
+- https://memfiredb.com
+
+### Redis
+
+- https://redislabs.com/redis-enterprise-deployment
+
+## 图床
+
+- [picx](https://picx-docs.xpoet.cn)
 
 ## 监控
 
