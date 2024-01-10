@@ -29,6 +29,7 @@
 - [Fly.io](https://fly.io/)
 - [Deta.sh](https://www.deta.sh)
 - [firebase](https://firebase.google.com)
+- [Daki](https://daki.cc)
 
 ## 数据库
 
