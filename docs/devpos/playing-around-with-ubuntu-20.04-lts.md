@@ -1404,8 +1404,8 @@ ssh dev
 
 ```bash
 cd ~/.ssh
-ssh-keygen -t rsa -b 4096 -C "lalifeier@gmail.com" -f id_rsa_github
-ssh-keygen -t rsa -b 4096 -C "lalifeier@gmail.com" -f id_rsa_gitlab
+ssh-keygen -t ed25519 -C "lalifeier@gmail.com" -f id_rsa_github
+ssh-keygen -t ed25519 -C "lalifeier@gmail.com" -f id_rsa_gitlab
 
 # vim ~/.ssh/config
 Host github
