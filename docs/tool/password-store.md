@@ -95,7 +95,7 @@ pass git pull
 
 - 手动安装 `browserpass-native`
 
-```
+```bash
 wget https://github.com/browserpass/browserpass-native/releases/download/3.1.0/browserpass-linux64-3.1.0.tar.gz
 tar -xvf browserpass-linux64-3.1.0.tar.gz
 cd browserpass-linux64-3.1.0
