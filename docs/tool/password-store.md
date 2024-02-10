@@ -1,7 +1,6 @@
-#  [pass](https://www.passwordstore.org)(password-store) 密码管理器
+# password-store 密码管理器
 
 ## 安装
-
 
 ### Ubuntu / Debian
 
@@ -39,8 +38,7 @@ gpg -a -o gpg-private.key --export-secret-keys  <gpg-id>
 pass init <gpg-id> 或 pass init <email-id>
 ```
 
-## 使用Git
-
+## 使用 Git
 
 ```bash
 # 初始化
@@ -82,9 +80,29 @@ pass git push
 pass git pull
 ```
 
-
 ## 扩展
 
 - 浏览器插件 [Browserpass](https://chrome.google.com/webstore/detail/browserpass-ce/naepdomgkenhinolocfifgehidddafch)
 
 - ios软件 [Pass for iOS](https://apps.apple.com/us/app/pass-password-store/id1205820573)
+
+- 导入密码 [pass-import](https://github.com/roddhjav/pass-import#readme)
+
+- 跨平台客户端 [qtpass](http://qtpass.org)
+
+## Browserpass
+
+
+- 手动安装 `browserpass-native`
+
+```
+wget https://github.com/browserpass/browserpass-native/releases/download/3.1.0/browserpass-linux64-3.1.0.tar.gz
+tar -xvf browserpass-linux64-3.1.0.tar.gz
+cd browserpass-linux64-3.1.0
+make BIN=browserpass-linux64 configure
+sudo make BIN=browserpass-linux64 install
+cd /usr/lib/browserpass
+make hosts-chromium-user
+```
+
+- 安装 [browserpass-extension](https://chrome.google.com/webstore/detail/browserpass-ce/naepdomgkenhinolocfifgehidddafch)
