@@ -55,7 +55,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          deploy_key: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: lalifeier/lalifeier.github.io
           publish_branch: gh-pages  # default: gh-pages
           publish_dir: ./build
+          force_orphan: true
