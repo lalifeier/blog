@@ -17,8 +17,8 @@
 
 - [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#guidelines-for-using-github-pages)
 - [Cloudflare Pages](https://developers.cloudflare.com/pages/platform/limits)
-- [netlify](https://www.netlify.com/pricing)
 - [vercel](https://vercel.com/docs/platform/limits)
+- [netlify](https://www.netlify.com/pricing)
 
 ## 动态网站托管
 
