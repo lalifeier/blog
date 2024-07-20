@@ -9,7 +9,7 @@ const config = {
   title: 'Blog',
   tagline: 'Blog',
   url:  process.env.BASE === 'zone' ? 'https://docs.lalifeier.io' : 'https://lalifeier.github.io',
-  baseUrl: '/blog/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
