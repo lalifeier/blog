@@ -57,5 +57,5 @@ jobs:
         with:
           deploy_key: ${{ secrets.GITHUB_TOKEN }}
           external_repository: lalifeier/lalifeier.github.io
-          publish_branch: main  # default: gh-pages
+          publish_branch: gh-pages  # default: gh-pages
           publish_dir: ./build
