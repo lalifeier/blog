@@ -6,7 +6,9 @@
 
 DNS over HTTPS (DoH) 提供了一种通过 HTTPS 协议解析 DNS 请求的方法，提升了隐私和安全性。
 
-## 1. 安装 Cloudflared
+## 安装和使用
+
+### 安装 Cloudflared
 
 首先，添加 Cloudflare 的 GPG 密钥和软件源，并安装 Cloudflared：
 
@@ -22,9 +24,9 @@ echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudf
 sudo apt-get update && sudo apt-get install -y cloudflared
 ```
 
-## 2. 配置 Cloudflared
+### 配置 Cloudflared
 
-### 修改默认配置
+#### 修改默认配置
 
 修改 `/etc/default/cloudflared` 文件，以使用自定义的上游 DNS 服务器：
 
@@ -34,7 +36,7 @@ CLOUDFLARED_OPTS="--upstream https://223.5.5.5/dns-query --upstream https://1.12
 EOF
 ```
 
-### 创建配置文件
+#### 创建配置文件
 
 或者，创建一个配置文件来设置 Cloudflared 以启用 DoH：
 
@@ -58,7 +60,7 @@ proxy-dns-upstream:
 EOF
 ```
 
-## 3. 设置 Cloudflared 服务
+### 设置 Cloudflared 服务
 
 创建 systemd 服务文件，并使其在系统启动时自动运行：
 
@@ -85,7 +87,7 @@ EOF
 sudo systemctl enable --now cloudflared-proxy-dns
 ```
 
-## 4. 更新系统 DNS 设置
+### 更新系统 DNS 设置
 
 将系统的 DNS 设置指向 Cloudflared 代理：
 
@@ -93,7 +95,7 @@ sudo systemctl enable --now cloudflared-proxy-dns
 sudo sed -i '1inameserver 127.0.0.1' /etc/resolv.conf
 ```
 
-## 5. 验证 DoH 配置
+### 验证 DoH 配置
 
 使用 `dig` 命令验证 DoH 是否配置成功：
 

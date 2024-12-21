@@ -420,7 +420,8 @@ sudo touch /etc/.aria2/aria2.session
 sudo chmod 777 /etc/.aria2/aria2.session
 sudo vim /etc/.aria2/aria2.conf
 
-sudo aria2c --conf-path=/etc/.aria2/aria2.conf -D
+# sudo aria2c --conf-path=/etc/.aria2/aria2.conf -D
+
 ```
 
 ```conf
@@ -777,6 +778,28 @@ summary-interval=0
 # BitTorrent trackers ##
 bt-tracker=udp://tracker.opentrackr.org:1337/announce,http://tracker.internetwarriors.net:1337/announce,udp://exodus.desync.com:6969/announce,udp://tracker.cyberia.is:6969/announce,udp://explodie.org:6969/announce,udp://opentracker.i2p.rocks:6969/announce,udp://47.ip-51-68-199.eu:6969/announce,http://open.acgnxtracker.com:80/announce,udp://open.stealth.si:80/announce,udp://tracker.ds.is:6969/announce,udp://www.torrent.eu.org:451/announce,udp://tracker.torrent.eu.org:451/announce,udp://retracker.lanta-net.ru:2710/announce,http://tracker4.itzmx.com:2710/announce,udp://tracker.moeking.me:6969/announce,udp://tracker.dler.org:6969/announce,udp://ipv4.tracker.harry.lu:80/announce,http://rt.tace.ru:80/announce,udp://valakas.rollo.dnsabr.com:2710/announce,udp://opentor.org:2710/announce
 ```
+
+创建 systemd 服务文件，并使其在系统启动时自动运行：
+
+```bash
+sudo tee /etc/systemd/system/aria2.service >/dev/null <<EOF
+[Unit]
+Description=Aria2c
+Requires=network.target
+After=dhcpcd.service
+
+[Service]
+ExecStart=aria2c --conf-path=/etc/.aria2/aria2.conf
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# 启用并启动 aria2 服务
+sudo systemctl enable --now aria2
+```
+
+
 
 在 "编辑"-->"设置"-->"插件" 中更改插件匹配顺序为 aria2
 

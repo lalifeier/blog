@@ -36,3 +36,7 @@
 | [NextDNS](https://nextdns.io/) | - | - | `https://dns.nextdns.io/{id}` | `dot.nextdns.io` | 自定义过滤规则，支持广告拦截 |
 | [OpenDNS FamilyShield](https://www.opendns.com/setupguide/#familyshield) | 208.67.222.123<br />208.67.220.123 | - | ❎ | ❎ | 提供广告和恶意软件过滤功能 |
 | [CleanBrowsing](https://cleanbrowsing.org/) | 185.228.168.9<br />185.228.169.9 | - | `https://dns.cleanbrowsing.org/dns-query` | `dns.cleanbrowsing.org` | 提供广告和恶意软件过滤功能 |
+
+## 参考资料
+
+- [已知的 DNS 提供商](https://adguard-dns.io/kb/zh-CN/general/dns-providers/)

@@ -22,3 +22,4 @@
 | [BootCDN](https://www.bootcdn.cn/) | ✅ | ❎ | - | - | https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js | 同步 cdnjs.com |
 | loli.net | ✅ | ✅ | - | - | https://cdnjs.loli.net/ajax/libs/jquery/3.7.1/jquery.min.js | 同步 cdnjs.com |
 | [jshub](https://jshub.com/) | ✅ | ✅ | - | - | https://libs.jshub.com/jquery/3.7.1/jquery.min.js | - |
+| 知乎 | ✅ | ❎ | - | - | https://unpkg.zhimg.com/jquery@3.7.1/dist/jquery.min.js | 未公开 同步 unpkg.com  |

@@ -11,13 +11,13 @@ sudo sh get-docker.sh --mirror Aliyun
 cat <<EOF | sudo tee /etc/docker/daemon.json
 {
     "registry-mirrors": [
-        "https://1nj0zren.mirror.aliyuncs.com",
-        "https://dockerhub.azk8s.cn",
-        "https://docker.mirrors.ustc.edu.cn",
-        "http://f1361db2.m.daocloud.io",
-        "https://hub-mirror.c.163.com",
-        "https://mirror.baidubce.com",
-        "https://registry.docker-cn.com"
+        "https://docker.m.daocloud.io",
+        "https://docker.jianmuhub.com",
+        "https://huecker.io",
+        "https://dockerhub.timeweb.cloud",
+        "https://dockerhub1.beget.com",
+        "https://noohub.ru",
+        "https://dockerhub.icu"
     ],
     "host": ["tcp://0.0.0.0:2375"]
 }
