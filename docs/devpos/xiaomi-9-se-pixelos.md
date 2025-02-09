@@ -85,6 +85,10 @@ fastboot reboot
 
 - [去广告](https://lingeringsound.github.io/10007/)
 
+- 核心防格
+
+- 音量键极速救砖
+
 ## Lsposed
 
 https://github.com/LSPosed/LSPosed
