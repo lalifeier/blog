@@ -42,7 +42,7 @@
             <string>101.102.103.104</string>
           </array>
           <key>ServerURL</key>
-          <string>https://dns.twnic.tw/dns-query</string>
+          <string>https://101.101.101.101/dns-query</string>
         </dict>
       </dict>
       <!-- Quad101 (DoT) -->
